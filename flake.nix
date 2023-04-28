@@ -1,4 +1,6 @@
 {
+  description = "Simple flake with a few custom packages I use";
+
   inputs = {
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
