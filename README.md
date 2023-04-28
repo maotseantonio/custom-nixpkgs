@@ -27,13 +27,16 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
       extraPkgs = import nix-extra-pkgs.extraPkgs { inherit pkgs; };
 
     in {
-      devShell.${system} = pkgs.mkShell {
-        buildInputs = with pkgs; [
-          extraPkgs.odin
+      devShells.${system}.default = pkgs.mkShell {
+        packages = with pkgs; [
           extraPkgs.ols
 
           # This flake should not affect normal nixpkgs at all
           sl
+        ];
+
+        buildInputs = with pkgs; [
+          extraPkgs.odin
         ];
       };
     };
