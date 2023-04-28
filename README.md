@@ -16,7 +16,7 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
     };
 
     nix-extra-pkgs = {
-      url = "github.com/lwndhrst/nix-extra-pkgs";
+      url = "github:lwndhrst/nix-extra-pkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -28,7 +28,7 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
       extraPkgs = nix-extra-pkgs;
 
     in {
-      devShell = pkgs.mkShell {
+      devShell.${system} = pkgs.mkShell {
         buildInputs = with pkgs; [
           extraPkgs.odin
           extraPkgs.ols
