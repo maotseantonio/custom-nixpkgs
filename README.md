@@ -17,7 +17,6 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
 
     nix-extra-pkgs = {
       url = "github:lwndhrst/nix-extra-pkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -25,7 +24,7 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
     let 
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      extraPkgs = nix-extra-pkgs;
+      extraPkgs = import nix-extra-pkgs.extraPkgs { inherit pkgs; };
 
     in {
       devShell.${system} = pkgs.mkShell {
