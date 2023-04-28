@@ -13,7 +13,7 @@
       pkgs = import nixpkgs { inherit system; }; 
 
     in {
-      # This can be run via the 'nix shell' command
+      # Can be used via 'nix shell /path/to/this/flake#<package>'
       packages.${system} = import ./packages { inherit pkgs; };
 
       # Use this for importing packages to another flake
