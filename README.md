@@ -7,7 +7,7 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
 
 ## Usage
 
-### Example for dev shell with odin tools
+### Example for dev shell with odin tools (with `nix develop`)
 ```nix 
 {
   inputs = {
@@ -41,6 +41,22 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
       };
     };
 }
+```
+
+
+
+## With `nix shell`
+
+For use with `nix shell`, add this flake to the registry:
+
+```
+nix registry add extra github:lwndhrst/nix-extra-pkgs
+```
+
+Packages from this flake can then be run like so:
+
+```
+nix shell extra#<package>
 ```
 
 
