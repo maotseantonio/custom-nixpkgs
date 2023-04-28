@@ -45,9 +45,8 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
 
 ## List of packages in this flake
 
-- odin (an up to date version of the odin programming language)
-- ols (odin LSP)
-- papirus-icon-theme (customized version of papirus icon theme, fixed steam
-  icon)
-- path-of-building (build planning tool for Path of Exile)
-- sddm-rose-pine-theme (sddm theme based on [SDDM Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark) with [Rose Pine](https://rosepinetheme.com/) palette)
+- [odin](https://github.com/odin-lang/Odin)
+- [ols](https://github.com/DanielGavin/ols)
+- [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- [path-of-building](https://github.com/PathOfBuildingCommunity/PathOfBuilding)
+- sddm-rose-pine-theme (SDDM theme based on [SDDM Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark) with [Rose Pine](https://rosepinetheme.com/) palette)
