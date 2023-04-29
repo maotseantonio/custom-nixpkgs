@@ -17,6 +17,7 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
 
     nix-extra-pkgs = {
       url = "github:lwndhrst/nix-extra-pkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
