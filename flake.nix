@@ -10,13 +10,16 @@
   outputs = { self, nixpkgs }: 
     let 
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; }; 
+      pkgs = import nixpkgs { inherit system; };
+      extraPkgs = import ./packages { inherit pkgs; };
 
     in {
       # Can be used via 'nix shell /path/to/this/flake#<package>'
-      packages.${system} = import ./packages { inherit pkgs; };
+      packages.${system} = extraPkgs;
 
-      # Use this for importing packages to another flake
-      extraPkgs = ./packages;
+      # Use overlay for importing packages to another flake
+      overlays.default = (self: super: { 
+        inherit extraPkgs;
+      });
     };
 }
