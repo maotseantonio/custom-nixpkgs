@@ -23,8 +23,10 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
   outputs = { self, nixpkgs, nix-extra-pkgs }:
     let 
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-      extraPkgs = import nix-extra-pkgs.extraPkgs { inherit pkgs; };
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [ nix-extra-pkgs.overlays.default ];
+      };
 
     in {
       devShells.${system}.default = pkgs.mkShell {
