@@ -31,14 +31,14 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
     in {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
-          extraPkgs.ols
+          nixExtraPkgs.ols
 
           # This flake should not affect normal nixpkgs at all
           sl
         ];
 
         buildInputs = with pkgs; [
-          extraPkgs.odin
+          nixExtraPkgs.odin
         ];
       };
     };
