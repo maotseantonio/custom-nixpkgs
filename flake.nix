@@ -11,15 +11,15 @@
     let 
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      nixExtraPkgs = import ./packages { inherit pkgs; };
+      customPkgs = import ./packages { inherit pkgs; };
 
     in {
-      # Can be used via 'nix shell /path/to/this/flake#<package>'
-      packages.${system} = nixExtraPkgs;
+      # Can be used via 'nix shell /path/to/this/flake#<package>' or similarly via local nix registry
+      packages.${system} = customPkgs;
 
       # Use overlay for importing packages to another flake
       overlays.default = (self: super: { 
-        inherit nixExtraPkgs;
+        inherit customPkgs;
       });
     };
 }
