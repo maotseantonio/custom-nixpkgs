@@ -1,7 +1,7 @@
-# nix-extra-pkgs
+# custom-nixpkgs
 
 Simple flake with additional packages I use personally, that are not available
-in [Nixpkgs](https://github.com/NixOS/nixpkgs).
+in official [Nixpkgs](https://github.com/NixOS/nixpkgs).
 
 
 
@@ -15,31 +15,31 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
-    nix-extra-pkgs = {
-      url = "github:lwndhrst/nix-extra-pkgs";
+    custom-nixpkgs = {
+      url = "github:lwndhrst/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nix-extra-pkgs }:
+  outputs = { self, nixpkgs, custom-nixpkgs }:
     let 
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ nix-extra-pkgs.overlays.default ];
+        overlays = [ custom-nixpkgs.overlays.default ];
       };
 
     in {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
-          nixExtraPkgs.ols
+          customPkgs.ols
 
           # This flake should not affect normal nixpkgs at all
           sl
         ];
 
         buildInputs = with pkgs; [
-          nixExtraPkgs.odin
+          customPkgs.odin
         ];
       };
     };
@@ -53,13 +53,13 @@ in [Nixpkgs](https://github.com/NixOS/nixpkgs).
 For use with `nix shell`, add this flake to the registry:
 
 ```
-nix registry add extra github:lwndhrst/nix-extra-pkgs
+nix registry add customPkgs github:lwndhrst/custom-nixpkgs
 ```
 
 Packages from this flake can then be run like so:
 
 ```
-nix shell extra#<package>
+nix shell customPkgs#<package>
 ```
 
 
