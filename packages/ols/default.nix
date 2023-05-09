@@ -9,7 +9,9 @@ let
 
 in stdenvNoCC.mkDerivation rec {
   pname = "ols";
-  version = "nightly";
+  # Using a git commit hash for now, since ols does not have proper release tags currently
+  version = "2b0dccaa496fd809e36e7d979995e843bca28bfb";
+  # version = "nightly";
   dontConfigure = true;
 
   src = fetchFromGitHub {
