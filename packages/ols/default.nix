@@ -16,7 +16,7 @@ in stdenvNoCC.mkDerivation rec {
     owner = "DanielGavin";
     repo = "ols";
     rev = "${version}";
-    sha256 = "XeJWW3ro2hTp6VPMaW3RUzNujc2WXLy/ob/0hAsNKc0=";
+    sha256 = "DWcQinFqSomDQyxAi60x9mXVT2JzrQJUi9qisVOlueo=";
   };
 
   buildInputs = [ packages.odin ];
