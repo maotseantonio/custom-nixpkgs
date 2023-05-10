@@ -66,6 +66,7 @@ nix shell customPkgs#<package>
 
 ## List of packages in this flake
 
+- [nitch](https://github.com/lwndhrst/nitch) (fork of [nitch](https://github.com/ssleert/nitch) with nerdfont 3.0.0 icon fix and nixos support)
 - [odin](https://github.com/odin-lang/Odin)
 - [ols](https://github.com/DanielGavin/ols)
 - [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (with scuffed steam tray icon fix)
