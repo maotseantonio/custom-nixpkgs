@@ -5,14 +5,14 @@
 
 nimPackages.buildNimPackage rec {
   pname = "nitch";
-  version = "0.1.7";
+  version = "0.1.6";
   nimBinOnly = true;
 
   src = fetchFromGitHub {
     owner = "lwndhrst";
     repo = "nitch";
-    rev = "${version}";
-    sha256 = "r0r2r2FryjY02lD7RlXkUsChbePuzOJjCw234MjBdTI=";
+    rev = "v${version}";
+    sha256 = "KDNNagSaLSttw0LmUKr6nsTzITr/MnZWDgpL5aIuWAA=";
   };
 
   meta = with lib; {
