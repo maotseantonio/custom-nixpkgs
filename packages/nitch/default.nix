@@ -5,23 +5,21 @@
 
 nimPackages.buildNimPackage rec {
   pname = "nitch";
-  # version = "0.1.6";
-  version = "081e9f67404babae7d5c23c9c63af307688b971f";
+  version = "0.1.7";
   nimBinOnly = true;
 
   src = fetchFromGitHub {
     owner = "lwndhrst";
     repo = "nitch";
     rev = "${version}";
-    sha256 = "0ZQpTDfobTwrEh/vOd2ertXrix117HMCE8Q/uIVFNBg=";
+    sha256 = "r0r2r2FryjY02lD7RlXkUsChbePuzOJjCw234MjBdTI=";
   };
 
   meta = with lib; {
     description = "Incredibly fast system fetch written in nim";
-    homepage = "https://github.com/unxsh/nitch";
+    homepage = "https://github.com/lwndhrst/nitch";
     license = licenses.mit;
     platforms = platforms.linux;
-    maintainers = with maintainers; [ michaelBelsanti ];
     mainProgram = "nitch";
   };
 }
