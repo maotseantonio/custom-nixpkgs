@@ -15,8 +15,9 @@ stdenvNoCC.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "lwndhrst";
     repo = "sddm-rose-pine";
-    rev = "v${version}";
-    sha256 = "sHIeck++vUS21OXcUmaKimKSoiTPxzD8ST749QSaAkQ=";
+    # rev = "v${version}";
+    rev = "master";
+    sha256 = "+WOdazvkzpOKcoayk36VLq/6lLOHDWkDykDsy8p87JE=";
   };
 
   installPhase = ''
