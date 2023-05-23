@@ -4,7 +4,7 @@
 }:
 
 stdenvNoCC.mkDerivation rec {
-  pname = "sddm-rose-pine-theme";
+  pname = "sddm-rose-pine";
   version = "1.2";
   dontBuild = true;
 

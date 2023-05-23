@@ -6,5 +6,5 @@
   ols                   = pkgs.callPackage ./ols {};
   papirus-icon-theme    = pkgs.callPackage ./papirus-icon-theme {};
   path-of-building      = pkgs.callPackage ./path-of-building {};
-  sddm-rose-pine-theme  = pkgs.callPackage ./sddm-rose-pine-theme {};
+  sddm-rose-pine        = pkgs.callPackage ./sddm-rose-pine {};
 }
