@@ -69,6 +69,5 @@ nix shell customPkgs#<package>
 - [nitch](https://github.com/lwndhrst/nitch) (fork of [nitch](https://github.com/ssleert/nitch) with nerdfont 3.0.0 icon fix and nixos support)
 - [odin](https://github.com/odin-lang/Odin)
 - [ols](https://github.com/DanielGavin/ols)
-- [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (with scuffed steam tray icon fix)
 - [path-of-building](https://github.com/PathOfBuildingCommunity/PathOfBuilding)
 - [sddm-rose-pine](https://github.com/lwndhrst/sddm-rose-pine) (SDDM theme based on [SDDM Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark) with [Rose Pine](https://rosepinetheme.com/) palette)
