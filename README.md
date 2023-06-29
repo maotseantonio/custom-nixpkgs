@@ -1,13 +1,13 @@
 # custom-nixpkgs
 
-Simple flake with additional packages I use personally, that are not available
-in official [Nixpkgs](https://github.com/NixOS/nixpkgs).
+Simple flake with additional packages I use personally, that are/were not available in official [Nixpkgs](https://github.com/NixOS/nixpkgs).
 
 
 
 ## Usage
 
-### Example for dev shell with odin tools (with `nix develop`)
+### Example for dev shell with odin tools (using `nix develop`)
+
 ```nix 
 {
   inputs = {
@@ -66,6 +66,8 @@ nix shell customPkgs#<package>
 
 ## List of packages in this flake
 
+These are available via `pkgs.customPkgs`.
+
 - [nitch](https://github.com/lwndhrst/nitch) (fork of [nitch](https://github.com/ssleert/nitch) with nerdfont 3.0.0 icon fix and nixos support)
 - [odin](https://github.com/odin-lang/Odin)
 - [ols](https://github.com/DanielGavin/ols)
@@ -76,6 +78,6 @@ nix shell customPkgs#<package>
 
 ## List of additional Vim/Neovim plugins
 
-These are available via `customPkgs.vimPlugins`.
+These are available via `pkgs.customPkgs.vimPlugins`.
 
 - [ranger-nvim](https://github.com/kelly-lin/ranger.nvim)
