@@ -6,4 +6,8 @@
   ols                     = pkgs.callPackage ./ols {};
   path-of-building        = pkgs.callPackage ./path-of-building {};
   sddm-rose-pine          = pkgs.callPackage ./sddm-rose-pine {};
+
+  vimPlugins = {
+    ranger-nvim           = pkgs.callPackage ./vim/plugins/ranger-nvim {};
+  };
 }
