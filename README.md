@@ -71,3 +71,11 @@ nix shell customPkgs#<package>
 - [ols](https://github.com/DanielGavin/ols)
 - [path-of-building](https://github.com/PathOfBuildingCommunity/PathOfBuilding)
 - [sddm-rose-pine](https://github.com/lwndhrst/sddm-rose-pine) (SDDM theme based on [SDDM Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark) with [Rose Pine](https://rosepinetheme.com/) palette)
+
+
+
+## List of additional Vim/Neovim plugins
+
+These are available via `customPkgs.vimPlugins`.
+
+- [ranger-nvim](https://github.com/kelly-lin/ranger.nvim)
