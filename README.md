@@ -31,15 +31,9 @@ Simple flake with additional packages I use personally, that are/were not availa
 
     in {
       devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [
-          customPkgs.ols
-
-          # This flake should not affect normal nixpkgs at all
-          sl
-        ];
-
         buildInputs = with pkgs; [
           customPkgs.odin
+          customPkgs.ols
         ];
       };
     };
