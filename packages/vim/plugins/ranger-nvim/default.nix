@@ -13,5 +13,5 @@ vimUtils.buildVimPlugin {
     sha256 = "ulRNGYJGi9EEGKPF9yHQggFurZuGWDCPyqeneYnysu0=";
   };
 
-  meta.homepage = "https://github.com/kelly-lin/ranger.nvim/";
+  meta.homepage = "https://github.com/kelly-lin/ranger.nvim";
 }

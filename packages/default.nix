@@ -8,6 +8,7 @@
   sddm-rose-pine          = pkgs.callPackage ./sddm-rose-pine {};
 
   vimPlugins = {
+    harpoon               = pkgs.callPackage ./vim/plugins/harpoon {};
     ranger-nvim           = pkgs.callPackage ./vim/plugins/ranger-nvim {};
   };
 }
