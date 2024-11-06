@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  cinder                  = pkgs.callPackage ./cinder {};
   nitch                   = pkgs.callPackage ./nitch {};
   odin                    = pkgs.callPackage ./odin {};
   ols                     = pkgs.callPackage ./ols {};
