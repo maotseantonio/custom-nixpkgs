@@ -20,7 +20,6 @@
 libcxxStdenv.mkDerivation rec {
   pname = "cinder";
   version = "174c86b07eed185dca66a5b4918d3545d1c3284f";
-  # dontConfigure = true;
 
   src = fetchFromGitHub {
     owner = "cinder";
@@ -79,18 +78,16 @@ libcxxStdenv.mkDerivation rec {
       --replace-fail "set( SNDFILE_LIBRARY_DIRS" "set( SNDFILE_LIBRARY_DIRS $SNDFILE_LIBRARY_DIR"
   '';
 
-  # configurePhase = ''
-  #   cmake -S . -B build
-  # '';
-
-  # buildPhase = ''
-  #   cmake --build build
-  # '';
-
   installPhase = ''
     mkdir $out
     cd ..
     cp -r ./* $out/
+
+    substituteInPlace $out/lib/linux/x86_64/ogl/Release/cinderConfig.cmake \
+      --replace-fail "/build/source" "$out"
+
+    substituteInPlace $out/build/lib/linux/x86_64/ogl/Release/cinderTargets.cmake \
+      --replace-fail "/build/source" "$out"
   '';
 
   meta = with lib; {
