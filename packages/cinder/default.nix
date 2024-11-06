@@ -54,6 +54,13 @@ libcxxStdenv.mkDerivation rec {
     gst_all_1.gstreamermm
   ];
 
+  propagatedBuildInputs = [
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXinerama
+    xorg.libXrandr
+  ];
+
   prePatch = ''
     # libmpg123
     export MPG123_INCLUDE_DIR=$(pkg-config --variable=includedir ${libmpg123.dev}/lib/pkgconfig/libmpg123.pc)
