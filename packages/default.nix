@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  cgv                     = pkgs.callPackage ./cgv {};
+  cgv = {
+    master                = pkgs.callPackage ./cgv { gitBranch = "master"; };
+    develop               = pkgs.callPackage ./cgv { gitBranch = "develop"; };
+  };
   cinder                  = pkgs.callPackage ./cinder {};
   nitch                   = pkgs.callPackage ./nitch {};
   odin                    = pkgs.callPackage ./odin {};

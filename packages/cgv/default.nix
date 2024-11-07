@@ -19,8 +19,8 @@ let
     sha256 = "WLL08lBAsy5psBmLEuYwtjaOOya2hrrbq+pC2CP0xQc=";
   };
   gitBranchDevelop = {
-    commit = "b24861c5bb9ee6722ca143ecd61c17484ded1ee3";
-    sha256 = "WLL08lBAsy5psBmLEuYwtjaOOya2hrrbq+pC2CP0xQc=";
+    commit = "6549a32bd04e7059ee244d81c102c5122df2cbd6";
+    sha256 = "NbWBSoQvN56BlYympwxADfUkLEBAO0uGssUNzUFBv2k=";
   };
   branch =
     if gitBranch == "master"
