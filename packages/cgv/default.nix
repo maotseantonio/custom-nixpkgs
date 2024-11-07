@@ -1,7 +1,6 @@
 { lib
 , fetchFromGitHub
 , stdenv
-, cmake
 , libglvnd
 , xorg
 , libGLU
@@ -51,10 +50,14 @@ in stdenv.mkDerivation rec {
     libGLU
   ];
 
+  postPatch = ''
+    substituteInPlace CMakeLists.txt \
+      --replace-fail "add_subdirectory(doc)" ""
+  '';
+
   installPhase = ''
     mkdir $out
-    cd ..
-    cp -r source/* $out/
+    cp -r ./* $out/
   '';
 
   meta = with lib; {
