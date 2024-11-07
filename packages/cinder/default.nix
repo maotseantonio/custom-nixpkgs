@@ -1,6 +1,6 @@
 { lib
 , fetchFromGitHub
-, libcxxStdenv
+, stdenv
 , cmake
 , pkg-config
 , curl
@@ -17,7 +17,8 @@
 , gst_all_1
 }:
 
-libcxxStdenv.mkDerivation rec {
+# libcxxStdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "cinder";
   version = "174c86b07eed185dca66a5b4918d3545d1c3284f";
 
@@ -55,19 +56,6 @@ libcxxStdenv.mkDerivation rec {
   ];
 
   propagatedBuildInputs = [
-    curl.dev
-    fontconfig.dev
-    expat.dev
-    libglvnd
-    libmpg123
-    libmpg123.dev
-    libpulseaudio
-    zlib
-    libsndfile
-    boost
-    glib
-    gst_all_1.gstreamermm
-
     xorg.libXcursor
     xorg.libXi
     xorg.libXinerama
