@@ -30,7 +30,7 @@ let
     else abort "invalid branch";
 
 in stdenv.mkDerivation rec {
-  pname = "cgv-framework";
+  pname = "cgv";
   version = "${branch.commit}";
 
   src = fetchFromGitHub {
