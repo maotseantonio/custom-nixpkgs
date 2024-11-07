@@ -41,17 +41,17 @@ in stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  # nativeBuildInputs = [
-  #   cmake
-  # ];
+  nativeBuildInputs = [
+    cmake
+  ];
 
-  # buildInputs = [
-  #   libglvnd
-  #   xorg.libX11
-  #   xorg.libXi
-  #   xorg.libXinerama
-  #   libGLU
-  # ];
+  buildInputs = [
+    libglvnd
+    xorg.libX11
+    xorg.libXi
+    xorg.libXinerama
+    libGLU
+  ];
 
   propagatedBuildInputs = [
     libglvnd
@@ -65,7 +65,6 @@ in stdenv.mkDerivation rec {
     mkdir $out
     cd ..
     cp -r ./* $out/
-    # cp -r source/* $out/
   '';
 
   meta = with lib; {
