@@ -5,17 +5,39 @@
 , libglvnd
 , xorg
 , libGLU
+, gitBranch ? "master" # valid options are "master" or "develop"
 }:
 
-stdenv.mkDerivation rec {
+assert lib.asserts.assertOneOf "gitBranch" gitBranch [
+  "master"
+  "develop"
+];
+
+let
+  gitBranchMaster = {
+    commit = "b24861c5bb9ee6722ca143ecd61c17484ded1ee3";
+    sha256 = "WLL08lBAsy5psBmLEuYwtjaOOya2hrrbq+pC2CP0xQc=";
+  };
+  gitBranchDevelop = {
+    commit = "b24861c5bb9ee6722ca143ecd61c17484ded1ee3";
+    sha256 = "WLL08lBAsy5psBmLEuYwtjaOOya2hrrbq+pC2CP0xQc=";
+  };
+  branch =
+    if gitBranch == "master"
+    then gitBranchMaster
+    else if gitBranch == "develop"
+    then gitBranchDevelop
+    else abort "invalid branch";
+
+in stdenv.mkDerivation rec {
   pname = "cgv-framework";
-  version = "b24861c5bb9ee6722ca143ecd61c17484ded1ee3";
+  version = "${branch.commit}";
 
   src = fetchFromGitHub {
     owner = "sgumhold";
     repo = "cgv";
     rev = "${version}";
-    sha256 = "WLL08lBAsy5psBmLEuYwtjaOOya2hrrbq+pC2CP0xQc=";
+    sha256 = "${branch.sha256}";
     fetchSubmodules = true;
   };
 
@@ -32,9 +54,11 @@ stdenv.mkDerivation rec {
   ];
 
   propagatedBuildInputs = [
-    # xorg.libXi
-    # xorg.libXinerama
     libglvnd
+    xorg.libX11
+    xorg.libXi
+    xorg.libXinerama
+    libGLU
   ];
 
   installPhase = ''
