@@ -98,7 +98,7 @@ stdenv.mkDerivation rec {
       --replace-fail "/build/source" "$out"
 
     cp $out/lib/linux/x86_64/ogl/Release/cinderConfig.cmake $out/cinderConfig.cmake
-    cp $out/lib/linux/x86_64/ogl/Release/libcinder.a $out/lib/libcinder.a
+    # cp $out/lib/linux/x86_64/ogl/Release/libcinder.a $out/lib/libcinder.a
   '';
 
   meta = with lib; {
