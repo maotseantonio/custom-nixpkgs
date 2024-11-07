@@ -30,12 +30,12 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  buildInputs = [
-  ];
-
   nativeBuildInputs = [
     cmake
     pkg-config
+  ];
+
+  buildInputs = [
     curl.dev
     fontconfig.dev
     expat.dev
@@ -96,6 +96,8 @@ stdenv.mkDerivation rec {
 
     substituteInPlace $out/build/lib/linux/x86_64/ogl/Release/cinderTargets.cmake \
       --replace-fail "/build/source" "$out"
+
+    cp $out/lib/linux/x86_64/ogl/Release/cinderConfig.cmake $out/cinderConfig.cmake
   '';
 
   meta = with lib; {
