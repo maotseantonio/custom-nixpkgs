@@ -58,7 +58,8 @@ in stdenv.mkDerivation rec {
   installPhase = ''
     mkdir $out
     cd ..
-    cp -r ./* $out/
+    # cp -r ./* $out/
+    cp -r source/* $out/
   '';
 
   meta = with lib; {
