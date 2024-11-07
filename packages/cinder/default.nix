@@ -17,7 +17,6 @@
 , gst_all_1
 }:
 
-# libcxxStdenv.mkDerivation rec {
 stdenv.mkDerivation rec {
   pname = "cinder";
   version = "174c86b07eed185dca66a5b4918d3545d1c3284f";
