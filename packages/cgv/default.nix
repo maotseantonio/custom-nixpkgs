@@ -34,6 +34,7 @@ stdenv.mkDerivation rec {
   propagatedBuildInputs = [
     # xorg.libXi
     # xorg.libXinerama
+    libglvnd
   ];
 
   installPhase = ''
