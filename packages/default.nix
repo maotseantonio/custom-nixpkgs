@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  amdsmi                  = pkgs.callPackage ./amdsmi {};
   cgv = {
     master                = pkgs.callPackage ./cgv { gitBranch = "master"; };
     develop               = pkgs.callPackage ./cgv { gitBranch = "develop"; };
