@@ -4,6 +4,7 @@
 , libglvnd
 , xorg
 , libGLU
+, open-sans
 , gitBranch ? "master" # valid options are "master" or "develop"
 }:
 
@@ -48,9 +49,10 @@ in stdenv.mkDerivation rec {
     xorg.libXi
     xorg.libXinerama
     libGLU
+    open-sans
   ];
 
-  postPatch = ''
+  patchPhase = ''
     substituteInPlace CMakeLists.txt \
       --replace-fail "add_subdirectory(doc)" ""
   '';
