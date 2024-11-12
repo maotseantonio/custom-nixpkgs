@@ -53,6 +53,11 @@ in stdenv.mkDerivation rec {
   ];
 
   patchPhase = ''
+    substituteInPlace libs/plot/plot_base.cxx \
+      --replace-fail "std::string font_name = cgv::media::font::default_font(false)->get_name();" \
+                     "std::string font_name = cgv::media::font::default_font(true)->get_name();"
+                     # "cgv::scan_fonts(${open-sans}); std::string font_name = cgv::media::font::find_font("Open Sans", false)->get_name();"
+
     substituteInPlace CMakeLists.txt \
       --replace-fail "add_subdirectory(doc)" ""
   '';
