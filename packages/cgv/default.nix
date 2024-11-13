@@ -31,8 +31,6 @@ let
 in stdenv.mkDerivation rec {
   pname = "cgv";
   version = "${branch.commit}";
-  dontConfigure = true;
-  dontBuild = true;
 
   src = fetchFromGitHub {
     owner = "sgumhold";
