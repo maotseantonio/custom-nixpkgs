@@ -7,6 +7,7 @@
     develop               = pkgs.callPackage ./cgv { gitBranch = "develop"; };
   };
   cinder                  = pkgs.callPackage ./cinder {};
+  fcitx5-rose-pine-edit   = pkgs.callPackage ./fcitx5-rose-pine-edit {};
   nitch                   = pkgs.callPackage ./nitch {};
   odin                    = pkgs.callPackage ./odin {};
   ols                     = pkgs.callPackage ./ols {};
