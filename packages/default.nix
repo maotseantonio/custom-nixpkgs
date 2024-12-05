@@ -3,8 +3,9 @@
 {
   amdsmi                  = pkgs.callPackage ./amdsmi {};
   cgv = {
-    master                = pkgs.callPackage ./cgv { gitBranch = "master"; };
-    develop               = pkgs.callPackage ./cgv { gitBranch = "develop"; };
+    master                = pkgs.callPackage ./cgv { gitCommit = "master"; };
+    develop               = pkgs.callPackage ./cgv { gitCommit = "develop"; };
+    font-fix              = pkgs.callPackage ./cgv { gitCommit = "font-fix"; };
   };
   cinder                  = pkgs.callPackage ./cinder {};
   fcitx5-rose-pine-edit   = pkgs.callPackage ./fcitx5-rose-pine-edit {};
