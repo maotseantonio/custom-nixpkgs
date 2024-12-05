@@ -64,7 +64,10 @@ in stdenv.mkDerivation rec {
 
     substituteInPlace CMakeLists.txt \
       --replace-fail "add_subdirectory(doc)" ""
-  '' else "";
+  '' else ''
+    substituteInPlace CMakeLists.txt \
+      --replace-fail "add_subdirectory(doc)" ""
+  '';
 
   installPhase = ''
     mkdir $out
