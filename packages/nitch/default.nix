@@ -9,7 +9,7 @@ nimPackages.buildNimPackage rec {
   nimBinOnly = true;
 
   src = fetchFromGitHub {
-    owner = "lwndhrst";
+    owner = "maotseantonio";
     repo = "nitch";
     rev = "v${version}";
     sha256 = "KDNNagSaLSttw0LmUKr6nsTzITr/MnZWDgpL5aIuWAA=";
@@ -17,7 +17,7 @@ nimPackages.buildNimPackage rec {
 
   meta = with lib; {
     description = "Incredibly fast system fetch written in nim";
-    homepage = "https://github.com/lwndhrst/nitch";
+    homepage = "https://github.com/maotseantonio/nitch";
     license = licenses.mit;
     platforms = platforms.linux;
     mainProgram = "nitch";
