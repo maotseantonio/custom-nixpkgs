@@ -14,7 +14,7 @@
   ols                     = pkgs.callPackage ./ols {};
   path-of-building        = pkgs.callPackage ./path-of-building {};
   sddm-rose-pine          = pkgs.callPackage ./sddm-rose-pine {};
-  sddm-astronaut-theme     = pkgs.callPackage ./sddm-astronaut-theme.nix {};
+  sddm-astronaut-theme     = pkgs.callPackage ./sddm-astronaut-theme {};
 
   vimPlugins = {
     harpoon               = pkgs.callPackage ./vim/plugins/harpoon {};
